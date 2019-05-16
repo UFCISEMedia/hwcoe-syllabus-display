@@ -32,6 +32,12 @@
 	background: transparent;
 }
 
+@media (max-width: 767px) {
+	#syllabi-table_wrapper.dataTables_wrapper .dataTables_info {
+		float: none !important;
+	}
+}
+
 @media (max-width: 594px) {
 	.table-wrapper {
 		overflow-x: scroll;
