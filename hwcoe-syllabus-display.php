@@ -156,4 +156,4 @@ function syllabi_table_shortcode() {
 	return $output;
 }
 
-add_shortcode('syllabi_table', 'syllabi_table_shortcode'); 
+add_shortcode('syllabi-table', 'syllabi_table_shortcode'); 
