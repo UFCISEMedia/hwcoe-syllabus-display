@@ -31,6 +31,7 @@ add_filter( 'manage_edit-hwcoe-syllabi_columns', 'hwcoe_syllabi_columns' ) ;
 function hwcoe_syllabi_columns( $columns ) {
 
 	$columns = array(
+		'cb' => '&lt;input type="checkbox" />',
 		'title' => __( 'Title' ),
 		'instructor' => __( 'Instructor' ),
 		'number' => __( 'Course Number' ),
