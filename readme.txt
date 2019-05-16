@@ -31,5 +31,5 @@ Gravity Forms + Custom Post Types
 
 == Changelog ==
 
-= v1.0 (2019-03-25) =
+= v1.0 (2019-05-16) =
 * [NEW] Initial release
