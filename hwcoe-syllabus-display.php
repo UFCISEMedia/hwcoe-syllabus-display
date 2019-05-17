@@ -157,3 +157,41 @@ function syllabi_table_shortcode() {
 }
 
 add_shortcode('syllabi-table', 'syllabi_table_shortcode'); 
+
+// add_filter( 'gform_confirmation', 'custom_confirmation', 10, 4 );
+// function custom_confirmation( $confirmation, $form, $entry, $ajax ) {
+
+// 	add_filter( 'gform_field_value', 'populate_fields', 10, 3 );
+// 	function populate_fields( $value, $field, $name ) {
+	 
+// 	    $values = array(
+// 	        'first'   => 'value one',
+// 	        'last'   => 'value two',
+// 	    );
+	 
+// 	    return isset( $values[ $name ] ) ? $values[ $name ] : $value;
+// 	}
+
+//     if( $form['title'] == 'Syllabi Uploads' ) {
+//         $confirmation .= "<p>Thank you for submitting your syllabus. It will appear on the Syllabus List as soon as it is approved.</p>";
+//         $confirmation .= "<p>Submit another syllabus:</p>";
+//         $confirmation .= "[gravityform id=\"" . $form['id'] . "\" title=\"true\" description=\"false\" ajax=\"true=''\"]";
+//     }
+//     return $confirmation;
+// }
+
+// Allow the Gravity form to stay on the page when confirmation displays.
+// add_filter( 'gform_pre_submission_filter_4', 'dw_show_confirmation_and_form' );
+// function dw_show_confirmation_and_form( $form ) {
+// 	$shortcode = '[gravityform id="' . $form['id'] . '" title="true" description="false"]';
+
+// 	if ( array_key_exists( 'confirmations', $form ) ) {
+// 		foreach ( $form['confirmations'] as $key => $confirmation ) {
+// 			$form['confirmations'][ $key ]['message'] = $shortcode . '<div class="confirmation-message">' . $form['confirmations'][ $key ]['message'] . '</div>';
+
+// 			// $form['confirmations'][ $key ]['message'] = $form['confirmations'][ $key ]['message'] . '<br />' . $shortcode;
+// 		}
+// 	}
+
+// 	return $form;
+// }
