@@ -33,3 +33,9 @@ Gravity Forms + Custom Post Types
 
 = v1.0 (2019-05-16) =
 * [NEW] Initial release
+
+
+Made the following updates to Syllabi Uploads form settings:
+- Enabled form admin notification with link to edit/approve the Custom Post Type entry
+- Edited form confirmation to include links to syllabi list and reload form (site admin will need to edit URLs based on their site structure)
+- Updated form's "Personal Data" settings to delete form entries automatically after 10 days ("Course Syllabi" posts created by the form are not affected)
