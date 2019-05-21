@@ -13,15 +13,13 @@ The specified custom_post_type and ACF Field Group must be used for this plugin 
 
 1. Ensure all required plugins are installed and activated. 
 2. Upload the plugin to the plugins folder. 
-3. Upload the "datatables.min.css" file to the css folder. 
-4. Upload the "datatables.min.js" and "hwcoesyllabi.js" files to the js folder. 
-5. Activate the plugin from the Plugins dashboard.
-6. Go to Import/Export under the Gravity Forms Plugin.
-7. Import the "gravityforms-syllabi-upload.json" file.
-8. Go to ACF > Tools and import the "group_5cd17365c47bc.json" file.
-9. Paste the form shortcode on a page on your website.
-10. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. 
-11. As syllabi entries are submitted, they will be pending approval in the Course Syllabi tab and will display in the table once you have published the entry.
+3. Activate the plugin from the Plugins dashboard.
+4. Go to Import/Export under the Gravity Forms Plugin.
+5. Import the "gravityforms-syllabi-upload.json" file.
+6. Go to ACF > Tools and import the "group_5cd17365c47bc.json" file.
+7. Paste the form shortcode on a page on your website.
+8. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. 
+9. As syllabi entries are submitted, they will be pending approval in the Course Syllabi tab and will display in the table once you have published the entry.
 
 == Required Plugins ==
 
@@ -31,11 +29,12 @@ Gravity Forms + Custom Post Types
 
 == Changelog ==
 
+= v1.1 (2019-05-21) =
+	- Enqueue assets
+	- Update form settings
+		- Delete form entries automatically after 10 days ("Course Syllabi" posts created by the form are not affected)
+		- Enable form admin notification with link to edit/approve the Custom Post Type entry
+		- Update form confirmation message to include hard refresh (allows easier multiple uploads)
+
 = v1.0 (2019-05-16) =
 * [NEW] Initial release
-
-
-Made the following updates to Syllabi Uploads form settings:
-- Enabled form admin notification with link to edit/approve the Custom Post Type entry
-- Edited form confirmation to include links to syllabi list and reload form (site admin will need to edit URLs based on their site structure)
-- Updated form's "Personal Data" settings to delete form entries automatically after 10 days ("Course Syllabi" posts created by the form are not affected)
