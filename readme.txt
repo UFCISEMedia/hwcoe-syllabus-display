@@ -5,9 +5,15 @@ Allows admin to display a dynamic table of entries using the Syllabus Upload cus
 
 == Description ==
 
-The HWCOE Syllabus Upload plugin has been created specifically for HWCOE child theme websites. This plugin allows admin to display a dynamic table of entries using the Syllabus Upload custom_post_type and Advanced Custom Fields (ACF) using the Syllabus Upload Modules field group. 
+The HWCOE Syllabus Upload plugin has been created specifically for HWCOE child theme websites. This plugin allows admin to display a dynamic table of entries using the Syllabus Upload custom_post_type, Gravity Forms  using the Syllabi Uploads form, the Gravity Forms + Custom Post Types plugin and Advanced Custom Fields (ACF) using the Syllabus Upload Modules field group. 
 
-The specified custom_post_type and ACF Field Group must be used for this plugin to work. 
+The specified custom_post_type, Gravity Form and ACF Field Group must be used for this plugin to work. 
+
+== Required Plugins ==
+
+Advanced Custom Fields
+Gravity Forms
+Gravity Forms + Custom Post Types
 
 == Installation ==
 
@@ -21,11 +27,7 @@ The specified custom_post_type and ACF Field Group must be used for this plugin 
 8. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. 
 9. As syllabi entries are submitted, they will be pending approval in the Course Syllabi tab and will display in the table once you have published the entry.
 
-== Required Plugins ==
 
-Advanced Custom Fields
-Gravity Forms
-Gravity Forms + Custom Post Types
 
 == Changelog ==
 
