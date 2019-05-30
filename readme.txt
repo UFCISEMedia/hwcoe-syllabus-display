@@ -29,6 +29,9 @@ Gravity Forms + Custom Post Types
 
 == Changelog ==
 
+= v1.2 (2019-05-30) =
+	- Update form settings to previous version
+
 = v1.1 (2019-05-21) =
 	- Enqueue assets
 	- Update form settings
