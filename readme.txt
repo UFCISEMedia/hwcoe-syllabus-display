@@ -24,13 +24,22 @@ Gravity Forms + Custom Post Types
 5. Import the "gravityforms-syllabi-upload.json" file.
 6. Go to ACF > Tools and import the "group_5cd17365c47bc.json" file.
 7. Paste the form shortcode on a page on your website.
-8. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. 
+8. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. ***Page must have "Syllabi Upload" as the title.***
 9. As syllabi entries are submitted, they will be pending approval in the Course Syllabi tab and will display in the table once you have published the entry.
 
 
 
 == Changelog ==
 
+= v1.3 (2019-10-5) =
+	- Modifies name of form to match prospective page title
+	- Adds input mask for Course Number field
+	- Adds years to Semester field
+	- Removes description for the Syllabus field
+	- Makes value of Name field always output as Title Case
+	- Makes value of Course Number field always output as uppercase
+	- Renames the files uploaded to be course number plus semester and year
+	
 = v1.2 (2019-05-30) =
 	- Update form settings to previous version
 
