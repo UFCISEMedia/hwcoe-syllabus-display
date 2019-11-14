@@ -113,6 +113,74 @@ function manage_syllabi_columns( $column, $post_id ) {
 	}
 }
 
+//Make columns sortable in the Admin Edit panel
+add_filter( 'manage_edit-hwcoe-syllabi_sortable_columns', 'hwcoe_syllabi_sortable_columns' ) ;
+
+function hwcoe_syllabi_sortable_columns( $columns ) {
+
+	$columns['instructor'] = 'Instructor';
+	$columns['semester'] = 'Semester';
+	$columns['year'] = 'Year';
+
+	return $columns;
+}
+
+// Only run our customization on the 'edit.php' page in the admin.
+add_action( 'load-edit.php', 'my_edit_hwcoe_syllabi_load' );
+
+function my_edit_hwcoe_syllabi_load() {
+	add_filter( 'request', 'my_sort_hwcoe_syllabi' );
+}
+
+// Sorts the custom hwcoe-syllabi columns.
+function my_sort_hwcoe_syllabi( $vars ) {
+
+	/* Check if we're viewing the 'hwcoe-syllabi' post type. */
+	if ( isset( $vars['post_type'] ) && 'hwcoe-syllabi' == $vars['post_type'] ) {
+
+		/* Check if 'orderby' is set to 'instructor'. */
+		if ( isset( $vars['orderby'] ) && 'Instructor' == $vars['orderby'] ) {
+
+			/* Merge the query vars with our custom variables. */
+			$vars = array_merge(
+				$vars,
+				array(
+					'meta_key' => 'su_instructor',
+					'orderby' => 'meta_value'
+				)
+			);
+		}
+
+		/* Check if 'orderby' is set to 'semester'. */
+		if ( isset( $vars['orderby'] ) && 'Semester' == $vars['orderby'] ) {
+
+			/* Merge the query vars with our custom variables. */
+			$vars = array_merge(
+				$vars,
+				array(
+					'meta_key' => 'su_semester',
+					'orderby' => 'meta_value'
+				)
+			);
+		}
+		
+		/* Check if 'orderby' is set to 'year'. */
+		if ( isset( $vars['orderby'] ) && 'Year' == $vars['orderby'] ) {
+
+			/* Merge the query vars with our custom variables. */
+			$vars = array_merge(
+				$vars,
+				array(
+					'meta_key' => 'su_year',
+					'orderby' => 'meta_value_num'
+				)
+			);
+		}
+	}
+
+	return $vars;
+}
+
 /* Enqueue assets */
 add_action( 'wp_enqueue_scripts', 'hwcoe_syllabi_assets' );
 function hwcoe_syllabi_assets() {
