@@ -19,6 +19,7 @@ function create_post_type() {
       ),
       'public' => true,
 	  'menu_position' => 4,
+	  'menu_icon' => 'dashicons-text-page',
       'has_archive' => true,
     )
   );
