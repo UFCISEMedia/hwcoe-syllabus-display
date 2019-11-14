@@ -181,6 +181,43 @@ function my_sort_hwcoe_syllabi( $vars ) {
 	return $vars;
 }
 
+//Customize the search of admin panel edit page
+add_filter( 'posts_join', 'hwcoe_syllabi_search' );
+function hwcoe_syllabi_search ( $join ) {
+    global $pagenow, $wpdb;
+
+    // I want the filter only when performing a search on edit page of Custom Post Type named "hwcoe-syllabi".
+    if ( is_admin() && 'edit.php' === $pagenow && 'hwcoe-syllabi' === $_GET['post_type'] && ! empty( $_GET['s'] ) ) {    
+        $join .= 'LEFT JOIN ' . $wpdb->postmeta . ' ON ' . $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
+    }
+    return $join;
+}
+
+add_filter( 'posts_where', 'hwcoe_syllabi_search_where' );
+function hwcoe_syllabi_search_where( $where ) {
+    global $pagenow, $wpdb;
+
+    // I want the filter only when performing a search on edit page of Custom Post Type named "hwcoe-syllabi".
+    if ( is_admin() && 'edit.php' === $pagenow && 'hwcoe-syllabi' === $_GET['post_type'] && ! empty( $_GET['s'] ) ) {
+        $where = preg_replace(
+            "/\(\s*" . $wpdb->posts . ".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
+            "(" . $wpdb->posts . ".post_title LIKE $1) OR (" . $wpdb->postmeta . ".meta_value LIKE $1)", $where );
+    }
+    return $where;
+}
+
+function hwcoe_syllabi_search_distinct( $where ){
+    global $pagenow, $wpdb;
+
+    if ( is_admin() && $pagenow=='edit.php' && $_GET['post_type']=='hwcoe-syllabi' && $_GET['s'] != '') {
+    return "DISTINCT";
+
+    }
+    return $where;
+}
+add_filter( 'posts_distinct', 'hwcoe_syllabi_search_distinct' );
+//Ends search of admin panel edit page
+
 /* Enqueue assets */
 add_action( 'wp_enqueue_scripts', 'hwcoe_syllabi_assets' );
 function hwcoe_syllabi_assets() {
