@@ -3,7 +3,7 @@
 Plugin Name: HWCOE Syllabi Display
 Description: This plugin allows admin to display a dynamic table of entries using the Syllabus Upload custom_post_type. Use this shortcode to display the table: <strong>[syllabi-table]</strong>.
 Requirements: Advanced Custom Fields with the Student Registration Modules field group; hwcoe-ufl-child theme with career fair modifications; Gravity Forms with the Syllabi Uploads form and Gravity Forms + Custom Post Types plugin. 
-Version: 1.3
+Version: 1.4
 Author: Allison Logan
 Author URI: http://allisoncandreva.com/
 */

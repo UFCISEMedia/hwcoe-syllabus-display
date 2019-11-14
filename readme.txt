@@ -37,24 +37,28 @@ Gravity Forms + Custom Post Types
 
 == Changelog ==
 
-= v1.3 (2019-10-5) =
-	- Modifies name of form to match prospective page title
-	- Adds input mask for Course Number field
-	- Adds years to Semester field
-	- Removes description for the Syllabus field
-	- Makes value of Name field always output as Title Case
-	- Makes value of Course Number field always output as uppercase
-	- Renames the files uploaded to be course number plus semester and year
+= v1.4 (2019-11-14) =
+   * Add the ability to sort columns within the admin panel edit screen
+   * Updates the search output to include the custom columns
+
+= v1.3 (2019-10-05) =
+   * Modifies name of form to match prospective page title
+   * Adds input mask for Course Number field
+   * Adds years to Semester field
+   * Removes description for the Syllabus field
+   * Makes value of Name field always output as Title Case
+   * Makes value of Course Number field always output as uppercase
+   * Renames the files uploaded to be course number plus semester and year
 	
 = v1.2 (2019-05-30) =
-	- Update form settings to previous version
+   * Update form settings to previous version
 
 = v1.1 (2019-05-21) =
-	- Enqueue assets
-	- Update form settings
-		- Delete form entries automatically after 10 days ("Course Syllabi" posts created by the form are not affected)
-		- Enable form admin notification with link to edit/approve the Custom Post Type entry
-		- Update form confirmation message to include hard refresh (allows easier multiple uploads)
+   * Enqueue assets
+   * Update form settings
+       * Delete form entries automatically after 10 days ("Course Syllabi" posts created by the form are not affected)
+       * Enable form admin notification with link to edit/approve the Custom Post Type entry
+       * Update form confirmation message to include hard refresh (allows easier multiple uploads)
 
 = v1.0 (2019-05-16) =
-* [NEW] Initial release
+   * [NEW] Initial release
