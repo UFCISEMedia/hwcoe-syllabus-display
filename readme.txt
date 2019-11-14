@@ -24,14 +24,19 @@ Gravity Forms + Custom Post Types
 5. Import the "gravityforms-syllabi-upload.json" file.
 6. Go to ACF > Tools and import the "group_5cd17365c47bc.json" file.
 7. Set up the reCAPTCHA for your form:
-	- Go to the reCAPTCHA link (https://www.google.com/recaptcha/admin/create) to register your site. You may need to create a gmail account for this. Use something generic that can stay with the department and not something personal.
-	- Select reCAPTCHA v2 and the first "I'm not a robot" option
-	- Add your website address under domain
-	- Accept the terms and submit. This should provide you with two keys you will need for the form.	
-	- Back in Wordpress, go to Form > Settings. Scroll down to reCAPTCHA and put in your keys.
-8. Paste the form shortcode on a page on your website.
-9. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. ***Page must have "Syllabi Upload" as the title.***
-10. As syllabi entries are submitted, they will be pending approval in the Course Syllabi tab and will display in the table once you have published the entry.
+     - Go to the reCAPTCHA link (https://www.google.com/recaptcha/admin/create) to register your site. You may need to create a gmail account for this. Use something generic that can stay with the department and not something personal.
+     - Select reCAPTCHA v2 and the first "I'm not a robot" option
+     - Add your website address under domain
+     - Accept the terms and submit. This should provide you with two keys you will need for the form.	
+     - Back in Wordpress, go to Form > Settings. Scroll down to reCAPTCHA and put in your keys.
+8. Set up the email notifications. 
+     - Go to Forms > Syllabi Uploads > Settings > Notifications
+     - Turn on the Admin Notification and click to edit
+     - Add in whatever email you would like to receive notifications of syllabi submissions in the "Send To Email" field
+9. Paste the form shortcode on a page on your website to display the form.
+10. Paste the plugin shortcode -- [syllabi-table] -- on the page you would like to display the table. 
+     ***Page must have "Syllabi Upload" as the title.***
+11. As syllabi entries are submitted, they will be pending approval in the Course Syllabi tab and will display in the table once you have published the entry.
 
 
 
