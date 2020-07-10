@@ -401,3 +401,19 @@ function syllabi_table_shortcode() {
 }
 
 add_shortcode('syllabi-table', 'syllabi_table_shortcode'); 
+
+
+// Integrate Advanced Custom Fields
+add_filter( 'acf/settings/save_json', function() {
+	// save to the acf-json directory in syllabi uploads plugin folder
+    return get_stylesheet_directory() . '/inc/acf-json';
+} );
+
+add_filter( 'acf/settings/load_json', function( $paths ) {
+    unset( $paths[0] );
+    
+    // load syllabi uploads plugin custom fields
+    $paths[] = get_stylesheet_directory() . '/inc/acf-json';
+	
+    return $paths;
+} );

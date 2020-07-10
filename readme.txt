@@ -18,11 +18,11 @@ Gravity Forms + Custom Post Types
 == Installation ==
 
 1. Ensure all required plugins are installed and activated. 
-2. Upload the plugin to the plugins folder. 
-3. Activate the plugin from the Plugins dashboard.
-4. Go to Import/Export under the Gravity Forms Plugin.
-5. Import the "gravityforms-syllabi-upload.json" file.
-6. Go to ACF > Tools and import the "group_5cd17365c47bc.json" file.
+2. Move the "_Required Files" folder to outside the plugin folder.
+3. Upload the plugin to the Wordpress Plugins folder. 
+4. Activate the plugin from the Plugins dashboard.
+5. Go to Import/Export under the Gravity Forms Plugin.
+6. Import the "gravityforms-syllabi-upload.json" file located in the "_Required Files" folder.
 7. Set up the reCAPTCHA for your form:
      - Go to the reCAPTCHA link (https://www.google.com/recaptcha/admin/create) to register your site. You may need to create a gmail account for this. Use something generic that can stay with the department and not something personal.
      - Select reCAPTCHA v2 and the first "I'm not a robot" option
@@ -41,6 +41,11 @@ Gravity Forms + Custom Post Types
 
 
 == Changelog ==
+
+= v1.5 (2020-07-10) =
+   * Adds local JSON and corresponding files
+   * Adds more years to the gravity form
+   * Updates ReadMe file
 
 = v1.4 (2019-11-14) =
    * Add the ability to sort columns within the admin panel edit screen
