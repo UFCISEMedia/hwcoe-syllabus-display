@@ -361,7 +361,7 @@ function syllabi_table_shortcode() {
     wp_enqueue_script( 'hwcoe-syllabi' );
 	
 	//Query
-	$the_query = new WP_Query(array( 'post_type' => 'hwcoe-syllabi', 'posts_per_page' => 100 ));
+	$the_query = new WP_Query(array( 'post_type' => 'hwcoe-syllabi', 'posts_per_page' => -1 ));
 	
 	//Table
 	$output = '<table id="syllabi-table">
