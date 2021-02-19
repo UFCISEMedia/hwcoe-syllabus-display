@@ -384,7 +384,7 @@ function syllabi_table_shortcode() {
 				if(get_field( 'su_course_sections' )):  //if the field is not empty
 					$output .= '<td>' .get_field( 'su_course_sections' ). '</td>'; //display it
 					else: 
-					$output .= '<td>n/a</td>';
+					$output .= '<td>All Sections</td>';
 					endif; 		
 				$output .= '<td>' .get_field( 'su_instructor' ). '</td>
 							<td>' .get_field( 'su_semester' ). '</td>
@@ -403,17 +403,28 @@ function syllabi_table_shortcode() {
 add_shortcode('syllabi-table', 'syllabi_table_shortcode'); 
 
 
-// Integrate Advanced Custom Fields
-add_filter( 'acf/settings/save_json', function() {
-	// save to the acf-json directory in syllabi uploads plugin folder
-    return get_stylesheet_directory() . '/inc/acf-json';
-} );
+// Add field groups for Syllabi Uploads
+add_filter('acf/settings/save_json', 'hwcoe_syllabi_acf_json_save_point');
 
-add_filter( 'acf/settings/load_json', function( $paths ) {
-    unset( $paths[0] );
-    
-    // load syllabi uploads plugin custom fields
-    $paths[] = get_stylesheet_directory() . '/inc/acf-json';
-	
-    return $paths;
-} );
+if (!function_exists('hwcoe_syllabi_acf_json_save_point')) { 
+	function hwcoe_syllabi_acf_json_save_point( $path ) {
+		// update path
+		$paths[] = plugin_dir_path(__FILE__) . 'inc/acf-json';
+		return $path; 
+	}
+}
+
+add_filter('acf/settings/load_json', 'hwcoe_syllabi_acf_json_load_point');
+
+if (!function_exists('hwcoe_syllabi_acf_json_load_point')) {
+	function hwcoe_syllabi_acf_json_load_point( $paths ) {	
+		// remove original path (optional)
+		unset($paths[0]);
+
+		// append path
+		$paths[] = plugin_dir_path(__FILE__) . 'inc/acf-json';
+		
+		// return
+		return $paths;
+	}
+}
