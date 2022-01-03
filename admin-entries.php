@@ -98,7 +98,7 @@ function manage_syllabi_columns( $column, $post_id ) {
 			if ( ! $update ) {
 				_e( '' );
 			} else {
-				echo 'yes';
+				echo 'Yes';
 			}
 
 			break;				
