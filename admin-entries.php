@@ -18,7 +18,8 @@ function hwcoe_syllabi_columns( $columns ) {
 		'semester' => __( 'Semester' ),
 		'year' => __( 'Year' ),
 		'syllabi' => __( 'Syllabi' ),
-		'date' => __( 'Date' )		
+		'date' => __( 'Date' ),
+		'update' => __( 'Update' )				
 	);
 
 	return $columns;
@@ -87,6 +88,20 @@ function manage_syllabi_columns( $column, $post_id ) {
 
 			break;			
 
+		/* If displaying the 'update' column. */
+		case 'update' :
+
+			/* Get the post meta. */
+			$update = get_post_meta( $post_id, 'su_revised_version', true );
+
+			/* Display the post meta. */
+			if ( ! $update ) {
+				_e( '' );
+			} else {
+				echo 'yes';
+			}
+
+			break;				
 		/* Just break out of the switch statement for everything else. */
 		default :
 			break;
