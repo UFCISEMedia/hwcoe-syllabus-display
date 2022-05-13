@@ -42,6 +42,12 @@ Gravity Forms + Custom Post Types
 
 == Changelog ==
 
+= v1.6 (2022-01-03) =
+   * Adds column for revisions
+   * Fixes Scrolling Bug
+   * Changes posts per page to display unlimited amount
+   * Updates ReadMe file
+   
 = v1.5 (2020-07-10) =
    * Adds local JSON and corresponding files
    * Adds more years to the gravity form
